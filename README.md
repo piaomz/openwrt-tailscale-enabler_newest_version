@@ -1,8 +1,9 @@
 # Tailscale on OpenWRT
 
-1. Extract the contents of root to your filesystem root:
+1. Extract the contents of root to your filesystem root, backup the resolv.conf dns configuration file:
 ```
 tar x -zvC / -f openwrt-tailscale-enabler-<tag>.tgz
+cp /etc/resolv.conf /etc/resolv.backup.conf
 ```
 
 2. Install the prerequisites for wget and tailscale:
