@@ -1,6 +1,9 @@
 # Tailscale on OpenWRT
 
-1. Extract the contents of root to your filesystem root, backup the resolv.conf dns configuration file:
+Resolving the problem of DNS configuration when rebooting openwrt system. (Because of autoupdate feature, the tailscale always download new version when rebooting)
+This is a Repo folk from adyanth.
+
+1. Extract the contents of root to your filesystem root, backup the resolv.conf DNS configuration file:
 ```
 tar x -zvC / -f openwrt-tailscale-enabler-<tag>.tgz
 cp /etc/resolv.conf /etc/resolv.backup.conf
