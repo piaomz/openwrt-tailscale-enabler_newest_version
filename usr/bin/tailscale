@@ -2,6 +2,9 @@
 
 set -e
 
+# recover the resolv.conf dns file
+cp /etc/resolv.backup.conf /etc/resolv.conf
+
 if [ ! -f /tmp/tailscale ]; then
     arch=`uname -m`
     if [ "$arch" == "mips" ]; then
