@@ -24,10 +24,9 @@ jobs:
       run: ./generate-tar.sh ${{ steps.data.outputs.version }}
     - name: List
       run: ls -alh .
-    - uses: softprops/action-gh-release@v1
+    - uses: ncipollo/release-action@v1
       with:
         artifacts: "openwrt-tailscale-enabler-*.tgz"
-#         bodyFile: "body.md"
         commit: ${{ steps.data.outputs.commit }}
         tag: ${{ steps.data.outputs.version }}
         token: ${{ secrets.GITHUB_TOKEN }}
